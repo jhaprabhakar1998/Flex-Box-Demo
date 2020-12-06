@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flex-Box</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        ul {
+            list-style-type: none;
+            margin-bottom: 10px;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 30px 10px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+    </style>
+    <script>
+        function hideAllFlexElements() {
+            document.getElementsByClassName("flex")[0].style.display = "block";
+            const items = document.getElementsByClassName("flex")[0].children;
+            for (let i = 0; i < items.length; i++) {
+                items[i].style.display = "none";
+            }
+            document.getElementsByClassName("home")[0].style.display = "none";
+        }
+
+        function home() {
+            document.getElementsByClassName("home")[0].style.display = "block";
+            document.getElementsByClassName("flex")[0].style.display = "none";
+        }
+
+        function flexDirection() {
+            hideAllFlexElements();
+            document.getElementsByClassName("flex-direction")[0].style.display = "flex";
+        }
+
+        function flexOrder() {
+            hideAllFlexElements();
+            document.getElementsByClassName("flex-order")[0].style.display = "flex";
+        }
+
+        function flexWrap() {
+            hideAllFlexElements();
+            document.getElementsByClassName("flex-wrap")[0].style.display = "flex";
+        }
+
+        function flexGrow() {
+            hideAllFlexElements();
+            document.getElementsByClassName("flex-grow")[0].style.display = "flex";
+        }
+
+        function flexShrink() {
+            hideAllFlexElements();
+            document.getElementsByClassName("flex-shrink")[0].style.display = "flex";
+        }
+
+        function flexJustifyContent() {
+            hideAllFlexElements();
+            document.getElementsByClassName("flex-justify-content")[0].style.display = "flex";
+        }
+
+        function flexAlignItems() {
+            hideAllFlexElements();
+            document.getElementsByClassName("flex-align-items")[0].style.display = "flex";
+        }
+
+        function flexAlignContent() {
+            hideAllFlexElements();
+            document.getElementsByClassName("flex-align-content")[0].style.display = "flex";
+        }
+
+        function flexAlignSelf() {
+            hideAllFlexElements();
+            document.getElementsByClassName("flex-align-self")[0].style.display = "flex";
+        }
+
+        function flexBasis() {
+            hideAllFlexElements();
+            document.getElementsByClassName("flex-basis")[0].style.display = "flex";
+        }
+    </script>
+</head>
+
+<body>
+
+    <ul>
+        <li><a onclick="home()">Home</a></li>
+        <li><a onclick="flexDirection()">FLEX DIRECTION</a></li>
+        <li><a onclick="flexOrder()">FLEX ORDER</a></li>
+        <li><a onclick="flexWrap()">FLEX WRAP</a></li>
+        <li><a onclick="flexGrow()">FLEX GROW</a></li>
+        <li><a onclick="flexShrink()">FLEX SHRINK</a></li>
+        <li><a onclick="flexJustifyContent()">FLEX JUSTIFY CONTENT</a></li>
+        <li><a onclick="flexAlignItems()">FLEX ALIGN ITEMS</a></li>
+        <li><a onclick="flexAlignContent()">FLEX ALIGN CONTENT</a></li>
+        <li><a onclick="flexAlignSelf()">FLEX ALIGN SELF</a></li>
+        <li><a onclick="flexBasis()">FLEX BASIS</a></li>
+    </ul>
+
+    <div class="home">
+        <h1>FLEX</h1>
+        <p>
+            The Flexbox layout provides efficient way to layout, align and distribute space among items
+            in a container. This is really helpful when the size of the elements in the container is
+            unknown and/or dynamic.
+            Using the flex in a container, gives the ability to alter its items width/height and order as
+            well to best fit in the space available. A flex container expands items to fill available free
+            space, or shrinks them to prevent overflow.
+            The flex is a value for the display property. It has to be provided in the container for the flex
+            to work. Only if it is defined inside the container, flex properties will work. Flex properties
+            are defined on the child elements.
+            To make the container to be flex, add this property in the container: display: flex; or
+            display: inline-flex; for the inline variation.
+        </p>
+        <h2>FLEX PROPERTY</h2>
+        <p>FLEX DIRECTION - It may take 4 values - row(default), column, row-reverse, column-reverse. e.g.
+            flex-direction: column-reverse</p>
+        <p>FLEX ORDER - It is used to specify the order of specific flex items. By default it is zero. The flex items
+            are sorted accoring to their order value. It can also be negative. e.g. order: 4</p>
+        <p>FLEX WRAP - It specifies whether the flex items should be wrapped or not. It take three values -
+            nowrap(default), wrap, wrap-reverse. e.g. flex-wrap: wrap</p>
+        <p>FLEX GROW - It specifies the ratio with which a flex item grows relative to the other flex items, when there
+            is some extra space available. If it is zero means it's width will not change. e.g. flex-grow: 2</p>
+        <p>FLEX SHRINK - It specifies the ratio with which a flex item shrinks relative to the other flex items, when
+            there is smaller space then the container width. It is just opposite to flex-grow. If it is zero means it's
+            width will not change. e.g. flex-shrink: 2</p>
+        <p>FLEX JUSTIFY CONTENT - It is used to align the flex items along the main axis. The main axis is the direction
+            of flex-direction. It may take 6 values - flex-start(default), flex-end, center, space-between,
+            space-around, space-evenly. e.g. justify-content: center</p>
+        <p>FLEX ALIGN ITEMS - It is used to align the flex items along cross axis. The cross axis is perpendicular to
+            main axis. It may take 5 values - flex-start, flex-end, center, stretch(default), baseline. e.g.
+            align-items: baseline</p>
+        <p>FLEX ALIGN CONTENT - It is used to align the flex lines, i.e. multiple lines of flex lines. It only works
+            when there are multiple line of flex items. It may take 6 values - flex-start, flex-end, center,
+            space-between, space-around, stretch(default). e.g. align-content: center</p>
+        <p>FLEX ALIGN SELF - It is used for the alignment of selected flex items inside the flex container. It overrides
+            the default alignment set by the flex container. It may take 6 values - auto(default), flex-start, flex-end,
+            center, stretch, baseline. e.g. align-self: center</p>
+        <p>FLEX BASIS - It is used to specify the initial length to the flex item. It will first apply the length of the
+            item before applying flex-grow or flex-shrink to the items. e.g. flex-basis: 120px</p>
+    </div>
+    <!-- FLEX DIRECTION -->
+    <div class="flex">
+        <div class="flex-direction">
+            <div class="flex-direction-container1">
+                <div class="flex-direction-container1-div1">
+                    div1
+                </div>
+                <div class="flex-direction-container1-div2">
+                    div2
+                </div>
+                <div class="flex-direction-container1-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-direction-container2">
+                <div class="flex-direction-container2-div1">
+                    div1
+                </div>
+                <div class="flex-direction-container2-div2">
+                    div2
+                </div>
+                <div class="flex-direction-container2-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-direction-container3">
+                <div class="flex-direction-container3-div1">
+                    div1
+                </div>
+                <div class="flex-direction-container3-div2">
+                    div2
+                </div>
+                <div class="flex-direction-container3-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-direction-container4">
+                <div class="flex-direction-container4-div1">
+                    div1
+                </div>
+                <div class="flex-direction-container4-div2">
+                    div2
+                </div>
+                <div class="flex-direction-container4-div3">
+                    div3
+                </div>
+            </div>
+        </div>
+
+        <!-- ORDER -->
+
+        <div class="flex-order">
+            <div class="flex-order-container1">
+                <div class="flex-order-container1-div1">
+                    div1
+                </div>
+                <div class="flex-order-container1-div2">
+                    div2
+                </div>
+                <div class="flex-order-container1-div3">
+                    div3
+                </div>
+                <div class="flex-order-container1-div4">
+                    div4
+                </div>
+                <div class="flex-order-container1-div5">
+                    div5
+                </div>
+                <div class="flex-order-container1-div6">
+                    div6
+                </div>
+            </div>
+        </div>
+
+        <!-- FLEX WRAP -->
+
+        <div class="flex-wrap">
+            <div class="flex-wrap-container1">
+                <div class="flex-wrap-container1-div1">
+                    div1
+                </div>
+                <div class="flex-wrap-container1-div2">
+                    div2
+                </div>
+                <div class="flex-wrap-container1-div3">
+                    div3
+                </div>
+                <div class="flex-wrap-container1-div4">
+                    div4
+                </div>
+                <div class="flex-wrap-container1-div5">
+                    div5
+                </div>
+                <div class="flex-wrap-container1-div6">
+                    div6
+                </div>
+            </div>
+            <div class="flex-wrap-container2">
+                <div class="flex-wrap-container2-div1">
+                    div1
+                </div>
+                <div class="flex-wrap-container2-div2">
+                    div2
+                </div>
+                <div class="flex-wrap-container2-div3">
+                    div3
+                </div>
+                <div class="flex-wrap-container2-div4">
+                    div4
+                </div>
+                <div class="flex-wrap-container2-div5">
+                    div5
+                </div>
+                <div class="flex-wrap-container2-div6">
+                    div6
+                </div>
+            </div>
+            <div class="flex-wrap-container3">
+                <div class="flex-wrap-container3-div1">
+                    div1
+                </div>
+                <div class="flex-wrap-container3-div2">
+                    div2
+                </div>
+                <div class="flex-wrap-container3-div3">
+                    div3
+                </div>
+                <div class="flex-wrap-container3-div4">
+                    div4
+                </div>
+                <div class="flex-wrap-container3-div5">
+                    div5
+                </div>
+                <div class="flex-wrap-container3-div6">
+                    div6
+                </div>
+            </div>
+        </div>
+
+        <!-- FLEX GROW -->
+
+        <div class="flex-grow">
+            <div class="flex-grow-container1">
+                <div class="flex-grow-container1-div1">
+                    div1
+                </div>
+                <div class="flex-grow-container1-div2">
+                    div2
+                </div>
+                <div class="flex-grow-container1-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-grow-container2">
+                <div class="flex-grow-container2-div1">
+                    div1
+                </div>
+                <div class="flex-grow-container2-div2">
+                    div2
+                </div>
+                <div class="flex-grow-container2-div3">
+                    div3
+                </div>
+            </div>
+        </div>
+
+        <!-- FLEX SHRINK -->
+
+        <div class="flex-shrink">
+            <div class="flex-shrink-container1">
+                <div class="flex-shrink-container1-div1">
+                    div1
+                </div>
+                <div class="flex-shrink-container1-div2">
+                    div2
+                </div>
+                <div class="flex-shrink-container1-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-shrink-container2">
+                <div class="flex-shrink-container2-div1">
+                    div1
+                </div>
+                <div class="flex-shrink-container2-div2">
+                    div2
+                </div>
+                <div class="flex-shrink-container2-div3">
+                    div3
+                </div>
+            </div>
+        </div>
+
+        <!-- FLEX JUSTIFY CONTENT -->
+
+        <div class="flex-justify-content">
+            <div class="flex-justify-content-container1">
+                <div class="flex-justify-content-container1-div1">
+                    div1
+                </div>
+                <div class="flex-justify-content-container1-div2">
+                    div2
+                </div>
+                <div class="flex-justify-content-container1-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-justify-content-container2">
+                <div class="flex-justify-content-container2-div1">
+                    div1
+                </div>
+                <div class="flex-justify-content-container2-div2">
+                    div2
+                </div>
+                <div class="flex-justify-content-container2-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-justify-content-container3">
+                <div class="flex-justify-content-container3-div1">
+                    div1
+                </div>
+                <div class="flex-justify-content-container3-div2">
+                    div2
+                </div>
+                <div class="flex-justify-content-container3-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-justify-content-container4">
+                <div class="flex-justify-content-container4-div1">
+                    div1
+                </div>
+                <div class="flex-justify-content-container4-div2">
+                    div2
+                </div>
+                <div class="flex-justify-content-container4-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-justify-content-container5">
+                <div class="flex-justify-content-container5-div1">
+                    div1
+                </div>
+                <div class="flex-justify-content-container5-div2">
+                    div2
+                </div>
+                <div class="flex-justify-content-container5-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-justify-content-container6">
+                <div class="flex-justify-content-container6-div1">
+                    div1
+                </div>
+                <div class="flex-justify-content-container6-div2">
+                    div2
+                </div>
+                <div class="flex-justify-content-container6-div3">
+                    div3
+                </div>
+            </div>
+        </div>
+
+        <!-- FLEX ALIGN ITEMS -->
+
+        <div class="flex-align-items">
+            <div class="flex-align-items-container1">
+                <div class="flex-align-items-container1-div1">
+                    div1
+                </div>
+                <div class="flex-align-items-container1-div2">
+                    div2
+                </div>
+                <div class="flex-align-items-container1-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-align-items-container2">
+                <div class="flex-align-items-container2-div1">
+                    div1
+                </div>
+                <div class="flex-align-items-container2-div2">
+                    div2
+                </div>
+                <div class="flex-align-items-container2-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-align-items-container3">
+                <div class="flex-align-items-container3-div1">
+                    div1
+                </div>
+                <div class="flex-align-items-container3-div2">
+                    div2
+                </div>
+                <div class="flex-align-items-container3-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-align-items-container4">
+                <div class="flex-align-items-container4-div1">
+                    div1
+                </div>
+                <div class="flex-align-items-container4-div2">
+                    div2
+                </div>
+                <div class="flex-align-items-container4-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-align-items-container5">
+                <div class="flex-align-items-container5-div1">
+                    <h5>div1</h5>
+                </div>
+                <div class="flex-align-items-container5-div2">
+                    <h2>div2</h2>
+                </div>
+                <div class="flex-align-items-container5-div3">
+                    <h1>div3</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- FLEX ALIGN CONTENT -->
+
+        <div class="flex-align-content">
+            <div class="flex-align-content-container1">
+                <div class="flex-align-content-container1-div1">
+                    div1
+                </div>
+                <div class="flex-align-content-container1-div2">
+                    div2
+                </div>
+                <div class="flex-align-content-container1-div3">
+                    div3
+                </div>
+                <div class="flex-align-content-container1-div4">
+                    div4
+                </div>
+                <div class="flex-align-content-container1-div5">
+                    div5
+                </div>
+                <div class="flex-align-content-container1-div6">
+                    div6
+                </div>
+            </div>
+            <div class="flex-align-content-container2">
+                <div class="flex-align-content-container2-div1">
+                    div1
+                </div>
+                <div class="flex-align-content-container2-div2">
+                    div2
+                </div>
+                <div class="flex-align-content-container2-div3">
+                    div3
+                </div>
+                <div class="flex-align-content-container2-div4">
+                    div4
+                </div>
+                <div class="flex-align-content-container2-div5">
+                    div5
+                </div>
+                <div class="flex-align-content-container2-div6">
+                    div6
+                </div>
+            </div>
+            <div class="flex-align-content-container3">
+                <div class="flex-align-content-container3-div1">
+                    div1
+                </div>
+                <div class="flex-align-content-container3-div2">
+                    div2
+                </div>
+                <div class="flex-align-content-container3-div3">
+                    div3
+                </div>
+                <div class="flex-align-content-container3-div4">
+                    div4
+                </div>
+                <div class="flex-align-content-container3-div5">
+                    div5
+                </div>
+                <div class="flex-align-content-container3-div6">
+                    div6
+                </div>
+            </div>
+            <div class="flex-align-content-container4">
+                <div class="flex-align-content-container4-div1">
+                    div1
+                </div>
+                <div class="flex-align-content-container4-div2">
+                    div2
+                </div>
+                <div class="flex-align-content-container4-div3">
+                    div3
+                </div>
+                <div class="flex-align-content-container4-div4">
+                    div4
+                </div>
+                <div class="flex-align-content-container4-div5">
+                    div5
+                </div>
+                <div class="flex-align-content-container4-div6">
+                    div6
+                </div>
+            </div>
+            <div class="flex-align-content-container5">
+                <div class="flex-align-content-container5-div1">
+                    div1
+                </div>
+                <div class="flex-align-content-container5-div2">
+                    div2
+                </div>
+                <div class="flex-align-content-container5-div3">
+                    div3
+                </div>
+                <div class="flex-align-content-container5-div4">
+                    div4
+                </div>
+                <div class="flex-align-content-container5-div5">
+                    div5
+                </div>
+                <div class="flex-align-content-container5-div6">
+                    div6
+                </div>
+            </div>
+            <div class="flex-align-content-container6">
+                <div class="flex-align-content-container6-div1">
+                    div1
+                </div>
+                <div class="flex-align-content-container6-div2">
+                    div2
+                </div>
+                <div class="flex-align-content-container6-div3">
+                    div3
+                </div>
+                <div class="flex-align-content-container6-div4">
+                    div4
+                </div>
+                <div class="flex-align-content-container6-div5">
+                    div5
+                </div>
+                <div class="flex-align-content-container6-div6">
+                    div6
+                </div>
+            </div>
+        </div>
+
+        <!-- FLEX ALIGN SELF -->
+
+        <div class="flex-align-self">
+            <div class="flex-align-self-container1">
+                <div class="flex-align-self-container1-div1">
+                    div1
+                </div>
+                <div class="flex-align-self-container1-div2">
+                    div2
+                </div>
+                <div class="flex-align-self-container1-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-align-self-container2">
+                <div class="flex-align-self-container2-div1">
+                    div1
+                </div>
+                <div class="flex-align-self-container2-div2">
+                    div2
+                </div>
+                <div class="flex-align-self-container2-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-align-self-container3">
+                <div class="flex-align-self-container3-div1">
+                    div1
+                </div>
+                <div class="flex-align-self-container3-div2">
+                    div2
+                </div>
+                <div class="flex-align-self-container3-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-align-self-container4">
+                <div class="flex-align-self-container4-div1">
+                    div1
+                </div>
+                <div class="flex-align-self-container4-div2">
+                    div2
+                </div>
+                <div class="flex-align-self-container4-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-align-self-container5">
+                <div class="flex-align-self-container5-div1">
+                    div1
+                </div>
+                <div class="flex-align-self-container5-div2">
+                    div2
+                </div>
+                <div class="flex-align-self-container5-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-align-self-container6">
+                <div class="flex-align-self-container6-div1">
+                    <h5>div1</h5>
+                </div>
+                <div class="flex-align-self-container6-div2">
+                    <h2>div2</h2>
+                </div>
+                <div class="flex-align-self-container6-div3">
+                    <h1>div3</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- FLEX BASIS -->
+
+        <div class="flex-basis">
+            <div class="flex-basis-container1">
+                <div class="flex-basis-container1-div1">
+                    div1
+                </div>
+                <div class="flex-basis-container1-div2">
+                    div2
+                </div>
+                <div class="flex-basis-container1-div3">
+                    div3
+                </div>
+            </div>
+            <div class="flex-basis-container2">
+                <div class="flex-basis-container2-div1">
+                    div1
+                </div>
+                <div class="flex-basis-container2-div2">
+                    div2
+                </div>
+                <div class="flex-basis-container2-div3">
+                    div3
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
