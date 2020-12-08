@@ -9,6 +9,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 
 .flex-direction-container1 {
@@ -16,6 +17,7 @@
     height: 250px;
     display: flex;
     background-color: lightgrey;
+    margin-bottom: 10px;
 }
 
 .flex-direction-container1  > div {
@@ -41,6 +43,7 @@
     display: flex;
     background-color: lightgrey;
     flex-direction: column;
+    margin-bottom: 10px;
 }
 
 .flex-direction-container2  > div {
@@ -66,6 +69,7 @@
     display: flex;
     flex-direction: row-reverse;
     background-color: lightgrey;
+    margin-bottom: 10px;
 }
 
 .flex-direction-container3  > div {
@@ -91,6 +95,7 @@
     display: flex;
     flex-direction: column-reverse;
     background-color: lightgrey;
+    margin-bottom: 10px;
 }
 
 .flex-direction-container4  > div {
@@ -165,6 +170,7 @@
     flex-direction: row;
     margin-bottom: 10px;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .flex-wrap-container1 {
@@ -173,6 +179,7 @@
     display: flex;
     flex-wrap: nowrap;
     background-color: lightgrey;
+    margin-bottom: 10px;
 }
 
 .flex-wrap-container1 > div {
@@ -210,6 +217,7 @@
     display: flex;
     flex-wrap: wrap;
     background-color: lightgrey;
+    margin-bottom: 10px;
 }
 
 .flex-wrap-container2 > div {
@@ -247,6 +255,7 @@
     display: flex;
     flex-wrap: wrap-reverse;
     background-color: lightgrey;
+    margin-bottom: 10px;
 }
 
 .flex-wrap-container3 > div {
@@ -284,6 +293,7 @@
     margin-bottom: 10px;
     display: none;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .flex-grow-container1 {
@@ -291,6 +301,7 @@
     height:100px;
     display:flex; 
     background-color:lightgrey;
+    margin-bottom: 10px;
 }
 
 .flex-grow-container1 > div {
@@ -315,6 +326,7 @@
     height: 100px;
     display:flex; 
     background-color:lightgrey;
+    margin-bottom: 10px;
 }
 
 .flex-grow-container2 > div {
@@ -343,6 +355,7 @@
     margin-bottom: 10px;
     display: none;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .flex-shrink-container1 {
@@ -350,6 +363,7 @@
     height: 100px;
     display:flex; 
     background-color:lightgrey;
+    margin-bottom: 10px;
 }
 
 .flex-shrink-container1 > div {
@@ -374,6 +388,7 @@
     height:100px;
     display:flex; 
     background-color:lightgrey;
+    margin-bottom: 10px;
 }
 
 .flex-shrink-container2 > div {
@@ -1118,9 +1133,9 @@
 /* FLEX BASIS */
 
 .flex-basis{
-    margin-bottom: 10px;
     display: none;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .flex-basis-container1 {
@@ -1128,6 +1143,7 @@
     height: 100px;
     display:flex; 
     background-color:lightgrey;
+    margin-bottom: 10px;
 }
 
 .flex-basis-container1 > div {
@@ -1152,6 +1168,7 @@
     height:100px;
     display:flex; 
     background-color:lightgrey;
+    margin-bottom: 10px;
 }
 
 .flex-basis-container2 > div {
